@@ -1,0 +1,10 @@
+{
+    "dataset": "instance_usage_grouped_300_seconds_month.csv",
+    "total_rows": 8064,
+    "avg_cpu_mean": 0.47282318454346245,
+    "avg_cpu_max": 0.5924373024521205,
+    "avg_mem_mean": 0.32715492839768506,
+    "avg_assigned_mem_mean": 0.5974625439506724,
+    "avg_cycles_per_instruction_mean": 166.1271898386057,
+    "memory_usage_ratio_mean": 0.5485628131717406
+}

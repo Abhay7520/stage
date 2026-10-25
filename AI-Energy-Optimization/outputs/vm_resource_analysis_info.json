@@ -1,0 +1,9 @@
+{
+    "dataset": "vm_cpu_readings_month_aggregated_cpu_mem_no_timestamp.csv",
+    "total_rows": 8640,
+    "cpu_usage_mean": 6184580.559308991,
+    "cpu_usage_max": 7812353.006218912,
+    "assigned_mem_mean": 1987180.0532407407,
+    "assigned_mem_max": 2191468.0,
+    "cpu_memory_ratio_mean": 3.1105864293663177
+}

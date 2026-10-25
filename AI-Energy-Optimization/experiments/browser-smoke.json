@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "pages": 12,
+  "desktop": [
+    1440,
+    1000
+  ],
+  "mobile": [
+    390,
+    844
+  ],
+  "checks": [
+    "navigation",
+    "page guides on all 12 pages",
+    "Dashboard full 7-step workflow popup",
+    "modal Escape dismissal, focus trap and focus restoration",
+    "field/action help does not mutate state",
+    "custom CPU/RAM input changes saved forecasts and provenance",
+    "invalid percentages rejected without replacing accepted history",
+    "unsaved input invalidates results and blocks batch forecast",
+    "mobile help dialog and overflow",
+    "save per-VM synthetic forecast",
+    "preview and apply",
+    "comparison",
+    "adaptive interval",
+    "history",
+    "JSON and CSV exports",
+    "legacy inference",
+    "input invalidation",
+    "reload persistence",
+    "mobile navigation and overflow"
+  ],
+  "page_errors": []
+}

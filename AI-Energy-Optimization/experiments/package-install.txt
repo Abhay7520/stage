@@ -1,0 +1,19 @@
+Defaulting to user installation because normal site-packages is not writeable
+Obtaining file:///workspace/scratch/05d82aec622e/source/majorproject-main/AI-Energy-Optimization
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: gridopt-ai
+  Building editable for gridopt-ai (pyproject.toml): started
+  Building editable for gridopt-ai (pyproject.toml): finished with status 'done'
+  Created wheel for gridopt-ai: filename=gridopt_ai-2.0.0-0.editable-py3-none-any.whl size=2997 sha256=25dfc15ca9de63a373c499db3102e0172fabbb389233d33e2732c18404e2e915
+  Stored in directory: /tmp/pip-ephem-wheel-cache-0evub00o/wheels/86/d4/55/626ebd294955ac753c1939f211178925f9e00165699b7763db
+Successfully built gridopt-ai
+Installing collected packages: gridopt-ai
+Successfully installed gridopt-ai-2.0.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.

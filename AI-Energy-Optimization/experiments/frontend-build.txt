@@ -1,0 +1,15 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> frontend@0.0.0 build
+> tsc -b && vite build
+
+vite v8.3.2 building client environment for production...
+transforming...
+✓ 1925 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.45 kB │ gzip:  0.29 kB
+dist/assets/index-BPMxeRzP.css   16.90 kB │ gzip:  4.40 kB
+dist/assets/index-mBiLFbb2.js   310.51 kB │ gzip: 94.20 kB
+
+✓ built in 597ms

@@ -1,0 +1,18 @@
+{
+  "source_archive": "majorproject-main (1)(2).zip",
+  "dataset_files_preserved_byte_for_byte": 1053,
+  "original_regression_tests_preserved": 8,
+  "source_foundations": [
+    "Phase 6 simulator",
+    "original CPU and energy model API contracts",
+    "original dark UI and input forms",
+    "all supplied datasets and analysis scripts"
+  ],
+  "initial_findings": [
+    "Empty backend intelligence_service.py and intelligence_routes.py",
+    "Empty train_memory.py",
+    "Original App.tsx contained 1486 lines",
+    "Simulator state originally process-memory only"
+  ],
+  "original_energy_artifact_retained_in": "Original Complete With Help archive; unused duplicate removed during cleanup"
+}

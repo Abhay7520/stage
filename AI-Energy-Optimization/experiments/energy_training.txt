@@ -1,0 +1,26 @@
+{
+  "dataset": "SWEAT supplied CSV collection",
+  "files": 1050,
+  "raw_rows": 338850,
+  "valid_rows": 338850,
+  "invalid_rows": 0,
+  "training_rows": 271080,
+  "test_rows": 67770,
+  "split": "80/20 disjoint file groups, random_state=42; files sorted; test not used in fit or model choice",
+  "xgboost": {
+    "mae_j": 4.275039643912665,
+    "rmse_j": 12.993740545277426,
+    "r2": 0.645677324590588
+  },
+  "training_mean_baseline": {
+    "mae_j": 12.679967769772288,
+    "rmse_j": 21.836631669349092,
+    "r2": -0.0006953058470287043
+  },
+  "limitations": [
+    "File-level separation does not ensure unseen hardware separation",
+    "Measurement interval duration/source provenance not supplied",
+    "Do not map independent workload values to SWEAT rows",
+    "CPU-input counterfactuals do not validate a resource-control model"
+  ]
+}

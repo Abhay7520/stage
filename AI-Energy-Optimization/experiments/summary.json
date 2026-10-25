@@ -1,0 +1,52 @@
+{
+  "method": "10 paired seeds, 4 servers, 8 hypothetical VMs, 8 five-minute intervals per seed. Held-out aggregate segments mapped to hypothetical VMs. Evaluate next-row demand with analytical power; migration energy included.",
+  "limitations": [
+    "No actual per-VM timestamps/identity",
+    "Power and SLA are proxies",
+    "Small synthetic topology",
+    "No base-paper reproduction",
+    "No confidence claim from correlated aggregate segments"
+  ],
+  "summary": {
+    "best_fit": {
+      "mean_total_energy_wh": 300.13462449877323,
+      "mean_energy_saving_percent_vs_static": 14.8820159974008,
+      "saving_stddev_percent": 12.42447663803438,
+      "mean_migrations": 4.8,
+      "mean_pressure_proxy": 0.002186015025668034,
+      "failed_reoptimizations": 24
+    },
+    "first_fit": {
+      "mean_total_energy_wh": 210.99085276880723,
+      "mean_energy_saving_percent_vs_static": 40.11899846217404,
+      "saving_stddev_percent": 0.632555976649181,
+      "mean_migrations": 5.2,
+      "mean_pressure_proxy": 0.0022413618989934863,
+      "failed_reoptimizations": 0
+    },
+    "predictive": {
+      "mean_total_energy_wh": 245.50466167199937,
+      "mean_energy_saving_percent_vs_static": 30.466058092016112,
+      "saving_stddev_percent": 9.88487116862131,
+      "mean_migrations": 3.0,
+      "mean_pressure_proxy": 0.00037665140140596205,
+      "failed_reoptimizations": 0
+    },
+    "predictive_no_forecast": {
+      "mean_total_energy_wh": 235.67418610214054,
+      "mean_energy_saving_percent_vs_static": 33.194153299039215,
+      "saving_stddev_percent": 9.428542259798682,
+      "mean_migrations": 3.2,
+      "mean_pressure_proxy": 0.0,
+      "failed_reoptimizations": 0
+    },
+    "static": {
+      "mean_total_energy_wh": 352.3228417175139,
+      "mean_energy_saving_percent_vs_static": 0.0,
+      "saving_stddev_percent": 0.0,
+      "mean_migrations": 0.0,
+      "mean_pressure_proxy": 0.0008020557386734812,
+      "failed_reoptimizations": 0
+    }
+  }
+}

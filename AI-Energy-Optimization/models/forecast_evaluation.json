@@ -1,0 +1,79 @@
+{
+  "dataset": "machine_usage_days_1_to_8_grouped_300_seconds.csv",
+  "sha256": "3cbe34a882f31272cecdf9cdab27d2e91d964f9dd45c199f9f53e6d38379746a",
+  "raw_rows": 2243,
+  "invalid_rows": 0,
+  "split": "60/20/20 file-order blocks with four-row purges; timestamps/entity IDs absent",
+  "training_rows": 1338,
+  "validation_rows": 441,
+  "test_rows": 444,
+  "features": [
+    "cpu_util_percent",
+    "mem_util_percent",
+    "net_in",
+    "net_out",
+    "disk_io_percent",
+    "cpu_util_percent_lag_1",
+    "cpu_util_percent_lag_2",
+    "cpu_util_percent_lag_3",
+    "mem_util_percent_lag_1",
+    "mem_util_percent_lag_2",
+    "mem_util_percent_lag_3",
+    "net_in_lag_1",
+    "net_in_lag_2",
+    "net_in_lag_3",
+    "net_out_lag_1",
+    "net_out_lag_2",
+    "net_out_lag_3",
+    "disk_io_percent_lag_1",
+    "disk_io_percent_lag_2",
+    "disk_io_percent_lag_3"
+  ],
+  "limitation": "Aggregated trace, no timestamp or entity IDs. Not validated per-VM or chronological forecasting.",
+  "cpu": {
+    "selected": "xgboost",
+    "validation_xgboost": {
+      "mae": 4.280298213916131,
+      "rmse": 5.58435985218234,
+      "r2": 0.7202944807792199
+    },
+    "validation_persistence": {
+      "mae": 4.68292353951726,
+      "rmse": 6.113487837519339,
+      "r2": 0.6647781265794821
+    },
+    "test_xgboost": {
+      "mae": 4.109128397749227,
+      "rmse": 5.3738888503222215,
+      "r2": 0.5494467690283886
+    },
+    "test_persistence": {
+      "mae": 4.3996557204057956,
+      "rmse": 5.798268263091712,
+      "r2": 0.47547600723220484
+    }
+  },
+  "memory": {
+    "selected": "xgboost",
+    "validation_xgboost": {
+      "mae": 1.2020486653231481,
+      "rmse": 1.61646162774444,
+      "r2": 0.41066385091409263
+    },
+    "validation_persistence": {
+      "mae": 1.2710247996850035,
+      "rmse": 1.7581192331357576,
+      "r2": 0.3028456658537436
+    },
+    "test_xgboost": {
+      "mae": 1.382873992888156,
+      "rmse": 1.7351834599688394,
+      "r2": 0.4678231977013897
+    },
+    "test_persistence": {
+      "mae": 1.1700085887501708,
+      "rmse": 1.5342594449395346,
+      "r2": 0.5839334975718246
+    }
+  }
+}

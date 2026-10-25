@@ -1,0 +1,33 @@
+{
+    "model_type": "XGBoost Regressor",
+    "purpose": "Next-step CPU workload prediction",
+    "dataset": "machine_usage_days_1_to_8_grouped_300_seconds.csv",
+    "target": "next_cpu_util_percent",
+    "features": [
+        "cpu_util_percent",
+        "mem_util_percent",
+        "net_in",
+        "net_out",
+        "disk_io_percent",
+        "cpu_util_percent_lag_1",
+        "cpu_util_percent_lag_2",
+        "cpu_util_percent_lag_3",
+        "mem_util_percent_lag_1",
+        "mem_util_percent_lag_2",
+        "mem_util_percent_lag_3",
+        "net_in_lag_1",
+        "net_in_lag_2",
+        "net_in_lag_3",
+        "net_out_lag_1",
+        "net_out_lag_2",
+        "net_out_lag_3",
+        "disk_io_percent_lag_1",
+        "disk_io_percent_lag_2",
+        "disk_io_percent_lag_3"
+    ],
+    "training_rows": 1791,
+    "testing_rows": 448,
+    "mae": 4.634068119768029,
+    "rmse": 5.8281380634115365,
+    "r2": 0.4657256369743975
+}

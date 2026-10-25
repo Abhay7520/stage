@@ -1,0 +1,1677 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "GridOpt AI Research API",
+    "version": "2.0.0"
+  },
+  "paths": {
+    "/simulation/state": {
+      "get": {
+        "tags": [
+          "Data Center Simulation"
+        ],
+        "summary": "Get State",
+        "operationId": "get_state_simulation_state_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Snapshot"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/simulation/metrics": {
+      "get": {
+        "tags": [
+          "Data Center Simulation"
+        ],
+        "summary": "Get Metrics",
+        "operationId": "get_metrics_simulation_metrics_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/simulation/reset": {
+      "post": {
+        "tags": [
+          "Data Center Simulation"
+        ],
+        "summary": "Reset",
+        "operationId": "reset_simulation_reset_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MutationResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/simulation/servers": {
+      "post": {
+        "tags": [
+          "Data Center Simulation"
+        ],
+        "summary": "Create Server",
+        "operationId": "create_server_simulation_servers_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ServerCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MutationResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/simulation/vms": {
+      "post": {
+        "tags": [
+          "Data Center Simulation"
+        ],
+        "summary": "Create Vm",
+        "operationId": "create_vm_simulation_vms_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VMCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MutationResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/simulation/allocate": {
+      "post": {
+        "tags": [
+          "Data Center Simulation"
+        ],
+        "summary": "Allocate Vm",
+        "operationId": "allocate_vm_simulation_allocate_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlacementRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MutationResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/simulation/migrate": {
+      "post": {
+        "tags": [
+          "Data Center Simulation"
+        ],
+        "summary": "Migrate Vm",
+        "operationId": "migrate_vm_simulation_migrate_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlacementRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MutationResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/intelligence/forecasts": {
+      "get": {
+        "tags": [
+          "Workload intelligence"
+        ],
+        "summary": "Forecasts",
+        "operationId": "forecasts_intelligence_forecasts_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/intelligence/histories": {
+      "get": {
+        "tags": [
+          "Workload intelligence"
+        ],
+        "summary": "Histories",
+        "operationId": "histories_intelligence_histories_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/intelligence/forecast": {
+      "post": {
+        "tags": [
+          "Workload intelligence"
+        ],
+        "summary": "Save Forecast",
+        "operationId": "save_forecast_intelligence_forecast_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Histories"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/optimization/preview": {
+      "post": {
+        "tags": [
+          "Integrated optimization"
+        ],
+        "summary": "Preview",
+        "operationId": "preview_optimization_preview_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Options"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlanResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/optimization/apply": {
+      "post": {
+        "tags": [
+          "Integrated optimization"
+        ],
+        "summary": "Apply Plan",
+        "operationId": "apply_plan_optimization_apply_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApplyRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/optimization/compare": {
+      "post": {
+        "tags": [
+          "Integrated optimization"
+        ],
+        "summary": "Compare",
+        "operationId": "compare_optimization_compare_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Options"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/optimization/step": {
+      "post": {
+        "tags": [
+          "Integrated optimization"
+        ],
+        "summary": "Step",
+        "operationId": "step_optimization_step_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StepRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/optimization/history": {
+      "get": {
+        "tags": [
+          "Integrated optimization"
+        ],
+        "summary": "History",
+        "operationId": "history_optimization_history_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reports/evaluation": {
+      "get": {
+        "tags": [
+          "Reports"
+        ],
+        "summary": "Evaluation",
+        "operationId": "evaluation_reports_evaluation_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reports/snapshot": {
+      "get": {
+        "tags": [
+          "Reports"
+        ],
+        "summary": "Snapshot",
+        "operationId": "snapshot_reports_snapshot_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reports/comparison.csv": {
+      "get": {
+        "tags": [
+          "Reports"
+        ],
+        "summary": "Comparison Csv",
+        "operationId": "comparison_csv_reports_comparison_csv_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "Original model laboratory"
+        ],
+        "summary": "Root",
+        "operationId": "root__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "tags": [
+          "Original model laboratory"
+        ],
+        "summary": "Health",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/predict/workload": {
+      "post": {
+        "tags": [
+          "Original model laboratory"
+        ],
+        "summary": "Predict Workload",
+        "operationId": "predict_workload_predict_workload_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WorkloadHistory"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/predict/energy": {
+      "post": {
+        "tags": [
+          "Original model laboratory"
+        ],
+        "summary": "Predict Energy",
+        "operationId": "predict_energy_predict_energy_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EnergyInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/optimize": {
+      "post": {
+        "tags": [
+          "Original model laboratory"
+        ],
+        "summary": "Optimize Resources",
+        "operationId": "optimize_resources_optimize_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OptimizationInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ApplyRequest": {
+        "properties": {
+          "strategy": {
+            "type": "string",
+            "enum": [
+              "predictive",
+              "first_fit",
+              "best_fit",
+              "static"
+            ],
+            "title": "Strategy",
+            "default": "predictive"
+          },
+          "interval_minutes": {
+            "type": "number",
+            "maximum": 1440.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Interval Minutes",
+            "default": 5
+          },
+          "energy_weight": {
+            "type": "number",
+            "maximum": 10.0,
+            "minimum": 0.0,
+            "title": "Energy Weight",
+            "default": 1
+          },
+          "risk_weight": {
+            "type": "number",
+            "maximum": 10.0,
+            "minimum": 0.0,
+            "title": "Risk Weight",
+            "default": 2
+          },
+          "balance_weight": {
+            "type": "number",
+            "maximum": 10.0,
+            "minimum": 0.0,
+            "title": "Balance Weight",
+            "default": 0.15
+          },
+          "migration_weight": {
+            "type": "number",
+            "maximum": 10.0,
+            "minimum": 0.0,
+            "title": "Migration Weight",
+            "default": 0.4
+          },
+          "headroom": {
+            "type": "number",
+            "maximum": 0.5,
+            "minimum": 0.0,
+            "title": "Headroom",
+            "default": 0.1
+          },
+          "cooldown_intervals": {
+            "type": "integer",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Cooldown Intervals",
+            "default": 2
+          },
+          "minimum_improvement": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Minimum Improvement",
+            "default": 0.002
+          },
+          "idle_watts": {
+            "type": "number",
+            "maximum": 10000.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Idle Watts",
+            "default": 100
+          },
+          "peak_watts": {
+            "type": "number",
+            "maximum": 20000.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Peak Watts",
+            "default": 250
+          },
+          "sleep_watts": {
+            "type": "number",
+            "maximum": 1000.0,
+            "minimum": 0.0,
+            "title": "Sleep Watts",
+            "default": 5
+          },
+          "migration_wh_per_gb": {
+            "type": "number",
+            "maximum": 10.0,
+            "minimum": 0.0,
+            "title": "Migration Wh Per Gb",
+            "default": 0.05
+          },
+          "beam_width": {
+            "type": "integer",
+            "maximum": 128.0,
+            "minimum": 1.0,
+            "title": "Beam Width",
+            "default": 32
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Revision"
+          },
+          "allocation": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Allocation"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "revision",
+          "allocation"
+        ],
+        "title": "ApplyRequest"
+      },
+      "EnergyInput": {
+        "properties": {
+          "cpu_mean": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Cpu Mean"
+          },
+          "cpu_max": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Cpu Max"
+          },
+          "cpu_min": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Cpu Min"
+          },
+          "cpu_std": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Cpu Std"
+          },
+          "cpu_median": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Cpu Median"
+          },
+          "cpu_frequency_ghz": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Cpu Frequency Ghz"
+          },
+          "memory_util_gb": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Memory Util Gb"
+          },
+          "sda_write_count_during_interval": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Sda Write Count During Interval"
+          },
+          "sda_read_count_during_interval": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Sda Read Count During Interval"
+          }
+        },
+        "type": "object",
+        "required": [
+          "cpu_mean",
+          "cpu_max",
+          "cpu_min",
+          "cpu_std",
+          "cpu_median",
+          "cpu_frequency_ghz",
+          "memory_util_gb",
+          "sda_write_count_during_interval",
+          "sda_read_count_during_interval"
+        ],
+        "title": "EnergyInput"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "Histories": {
+        "properties": {
+          "histories": {
+            "additionalProperties": {
+              "items": {
+                "$ref": "#/components/schemas/ResourceData"
+              },
+              "type": "array"
+            },
+            "type": "object",
+            "title": "Histories"
+          },
+          "source": {
+            "type": "string",
+            "pattern": "^(user-entered|measured|synthetic)$",
+            "title": "Source",
+            "default": "user-entered"
+          }
+        },
+        "type": "object",
+        "required": [
+          "histories"
+        ],
+        "title": "Histories"
+      },
+      "MetricResponse": {
+        "properties": {
+          "total_energy_wh": {
+            "type": "number",
+            "title": "Total Energy Wh"
+          },
+          "energy_wh": {
+            "type": "number",
+            "title": "Energy Wh"
+          },
+          "migration_energy_wh": {
+            "type": "number",
+            "title": "Migration Energy Wh"
+          },
+          "power_w": {
+            "type": "number",
+            "title": "Power W"
+          },
+          "sla_pressure_proxy": {
+            "type": "number",
+            "title": "Sla Pressure Proxy"
+          },
+          "scheduled_vms": {
+            "type": "integer",
+            "title": "Scheduled Vms"
+          },
+          "migrations": {
+            "type": "integer",
+            "title": "Migrations"
+          },
+          "servers": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Servers"
+          }
+        },
+        "additionalProperties": true,
+        "type": "object",
+        "required": [
+          "total_energy_wh",
+          "energy_wh",
+          "migration_energy_wh",
+          "power_w",
+          "sla_pressure_proxy",
+          "scheduled_vms",
+          "migrations",
+          "servers"
+        ],
+        "title": "MetricResponse"
+      },
+      "MutationResponse": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "title": "Success"
+          },
+          "state": {
+            "$ref": "#/components/schemas/Snapshot"
+          }
+        },
+        "type": "object",
+        "required": [
+          "success",
+          "state"
+        ],
+        "title": "MutationResponse"
+      },
+      "OptimizationInput": {
+        "properties": {
+          "current_cpu": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Current Cpu"
+          },
+          "predicted_workload": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Predicted Workload"
+          },
+          "cpu_frequency_ghz": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Cpu Frequency Ghz"
+          },
+          "memory_util_gb": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Memory Util Gb"
+          },
+          "sda_write_count_during_interval": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Sda Write Count During Interval"
+          },
+          "sda_read_count_during_interval": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Sda Read Count During Interval"
+          }
+        },
+        "type": "object",
+        "required": [
+          "current_cpu",
+          "predicted_workload",
+          "cpu_frequency_ghz",
+          "memory_util_gb",
+          "sda_write_count_during_interval",
+          "sda_read_count_during_interval"
+        ],
+        "title": "OptimizationInput"
+      },
+      "Options": {
+        "properties": {
+          "strategy": {
+            "type": "string",
+            "enum": [
+              "predictive",
+              "first_fit",
+              "best_fit",
+              "static"
+            ],
+            "title": "Strategy",
+            "default": "predictive"
+          },
+          "interval_minutes": {
+            "type": "number",
+            "maximum": 1440.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Interval Minutes",
+            "default": 5
+          },
+          "energy_weight": {
+            "type": "number",
+            "maximum": 10.0,
+            "minimum": 0.0,
+            "title": "Energy Weight",
+            "default": 1
+          },
+          "risk_weight": {
+            "type": "number",
+            "maximum": 10.0,
+            "minimum": 0.0,
+            "title": "Risk Weight",
+            "default": 2
+          },
+          "balance_weight": {
+            "type": "number",
+            "maximum": 10.0,
+            "minimum": 0.0,
+            "title": "Balance Weight",
+            "default": 0.15
+          },
+          "migration_weight": {
+            "type": "number",
+            "maximum": 10.0,
+            "minimum": 0.0,
+            "title": "Migration Weight",
+            "default": 0.4
+          },
+          "headroom": {
+            "type": "number",
+            "maximum": 0.5,
+            "minimum": 0.0,
+            "title": "Headroom",
+            "default": 0.1
+          },
+          "cooldown_intervals": {
+            "type": "integer",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Cooldown Intervals",
+            "default": 2
+          },
+          "minimum_improvement": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Minimum Improvement",
+            "default": 0.002
+          },
+          "idle_watts": {
+            "type": "number",
+            "maximum": 10000.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Idle Watts",
+            "default": 100
+          },
+          "peak_watts": {
+            "type": "number",
+            "maximum": 20000.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Peak Watts",
+            "default": 250
+          },
+          "sleep_watts": {
+            "type": "number",
+            "maximum": 1000.0,
+            "minimum": 0.0,
+            "title": "Sleep Watts",
+            "default": 5
+          },
+          "migration_wh_per_gb": {
+            "type": "number",
+            "maximum": 10.0,
+            "minimum": 0.0,
+            "title": "Migration Wh Per Gb",
+            "default": 0.05
+          },
+          "beam_width": {
+            "type": "integer",
+            "maximum": 128.0,
+            "minimum": 1.0,
+            "title": "Beam Width",
+            "default": 32
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "Options"
+      },
+      "PlacementRequest": {
+        "properties": {
+          "vm_id": {
+            "type": "string",
+            "title": "Vm Id"
+          },
+          "server_id": {
+            "type": "string",
+            "title": "Server Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "vm_id",
+          "server_id"
+        ],
+        "title": "PlacementRequest"
+      },
+      "PlanResponse": {
+        "properties": {
+          "revision": {
+            "type": "integer",
+            "title": "Revision"
+          },
+          "tick": {
+            "type": "integer",
+            "title": "Tick"
+          },
+          "strategy": {
+            "type": "string",
+            "title": "Strategy"
+          },
+          "allocation": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Allocation"
+          },
+          "before": {
+            "$ref": "#/components/schemas/MetricResponse"
+          },
+          "after": {
+            "$ref": "#/components/schemas/MetricResponse"
+          },
+          "actions": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Actions"
+          },
+          "explanation": {
+            "type": "string",
+            "title": "Explanation"
+          },
+          "comparable_workload": {
+            "type": "boolean",
+            "title": "Comparable Workload"
+          },
+          "missing_histories": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Missing Histories"
+          }
+        },
+        "additionalProperties": true,
+        "type": "object",
+        "required": [
+          "revision",
+          "tick",
+          "strategy",
+          "allocation",
+          "before",
+          "after",
+          "actions",
+          "explanation",
+          "comparable_workload",
+          "missing_histories"
+        ],
+        "title": "PlanResponse"
+      },
+      "ResourceData": {
+        "properties": {
+          "cpu_util_percent": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Cpu Util Percent"
+          },
+          "mem_util_percent": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Mem Util Percent"
+          },
+          "net_in": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Net In"
+          },
+          "net_out": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Net Out"
+          },
+          "disk_io_percent": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Disk Io Percent"
+          }
+        },
+        "type": "object",
+        "required": [
+          "cpu_util_percent",
+          "mem_util_percent",
+          "net_in",
+          "net_out",
+          "disk_io_percent"
+        ],
+        "title": "ResourceData"
+      },
+      "ServerCreate": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 40,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "cpu_capacity": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Cpu Capacity"
+          },
+          "memory_capacity": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Memory Capacity"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "cpu_capacity",
+          "memory_capacity"
+        ],
+        "title": "ServerCreate"
+      },
+      "ServerState": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "cpu_capacity": {
+            "type": "number",
+            "title": "Cpu Capacity"
+          },
+          "memory_capacity": {
+            "type": "number",
+            "title": "Memory Capacity"
+          },
+          "cpu_used": {
+            "type": "number",
+            "title": "Cpu Used"
+          },
+          "memory_used": {
+            "type": "number",
+            "title": "Memory Used"
+          },
+          "vms": {
+            "items": {
+              "$ref": "#/components/schemas/VMState"
+            },
+            "type": "array",
+            "title": "Vms"
+          }
+        },
+        "additionalProperties": true,
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "cpu_capacity",
+          "memory_capacity",
+          "cpu_used",
+          "memory_used",
+          "vms"
+        ],
+        "title": "ServerState"
+      },
+      "Snapshot": {
+        "properties": {
+          "servers": {
+            "items": {
+              "$ref": "#/components/schemas/ServerState"
+            },
+            "type": "array",
+            "title": "Servers"
+          },
+          "vms": {
+            "items": {
+              "$ref": "#/components/schemas/VMState"
+            },
+            "type": "array",
+            "title": "Vms"
+          },
+          "metrics": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Metrics"
+          },
+          "revision": {
+            "type": "integer",
+            "title": "Revision"
+          },
+          "tick": {
+            "type": "integer",
+            "title": "Tick"
+          },
+          "data_source": {
+            "type": "string",
+            "title": "Data Source"
+          },
+          "history_count": {
+            "type": "integer",
+            "title": "History Count"
+          }
+        },
+        "type": "object",
+        "required": [
+          "servers",
+          "vms",
+          "metrics",
+          "revision",
+          "tick",
+          "data_source",
+          "history_count"
+        ],
+        "title": "Snapshot"
+      },
+      "StepRequest": {
+        "properties": {
+          "strategy": {
+            "type": "string",
+            "enum": [
+              "predictive",
+              "first_fit",
+              "best_fit",
+              "static"
+            ],
+            "title": "Strategy",
+            "default": "predictive"
+          },
+          "interval_minutes": {
+            "type": "number",
+            "maximum": 1440.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Interval Minutes",
+            "default": 5
+          },
+          "energy_weight": {
+            "type": "number",
+            "maximum": 10.0,
+            "minimum": 0.0,
+            "title": "Energy Weight",
+            "default": 1
+          },
+          "risk_weight": {
+            "type": "number",
+            "maximum": 10.0,
+            "minimum": 0.0,
+            "title": "Risk Weight",
+            "default": 2
+          },
+          "balance_weight": {
+            "type": "number",
+            "maximum": 10.0,
+            "minimum": 0.0,
+            "title": "Balance Weight",
+            "default": 0.15
+          },
+          "migration_weight": {
+            "type": "number",
+            "maximum": 10.0,
+            "minimum": 0.0,
+            "title": "Migration Weight",
+            "default": 0.4
+          },
+          "headroom": {
+            "type": "number",
+            "maximum": 0.5,
+            "minimum": 0.0,
+            "title": "Headroom",
+            "default": 0.1
+          },
+          "cooldown_intervals": {
+            "type": "integer",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Cooldown Intervals",
+            "default": 2
+          },
+          "minimum_improvement": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Minimum Improvement",
+            "default": 0.002
+          },
+          "idle_watts": {
+            "type": "number",
+            "maximum": 10000.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Idle Watts",
+            "default": 100
+          },
+          "peak_watts": {
+            "type": "number",
+            "maximum": 20000.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Peak Watts",
+            "default": 250
+          },
+          "sleep_watts": {
+            "type": "number",
+            "maximum": 1000.0,
+            "minimum": 0.0,
+            "title": "Sleep Watts",
+            "default": 5
+          },
+          "migration_wh_per_gb": {
+            "type": "number",
+            "maximum": 10.0,
+            "minimum": 0.0,
+            "title": "Migration Wh Per Gb",
+            "default": 0.05
+          },
+          "beam_width": {
+            "type": "integer",
+            "maximum": 128.0,
+            "minimum": 1.0,
+            "title": "Beam Width",
+            "default": 32
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "unchanged",
+              "synthetic"
+            ],
+            "title": "Source",
+            "default": "unchanged"
+          },
+          "seed": {
+            "type": "integer",
+            "maximum": 2147483647.0,
+            "minimum": 0.0,
+            "title": "Seed",
+            "default": 42
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "StepRequest"
+      },
+      "VMCreate": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 40,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "cpu": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Cpu"
+          },
+          "memory": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Memory"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "cpu",
+          "memory"
+        ],
+        "title": "VMCreate"
+      },
+      "VMState": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "cpu": {
+            "type": "number",
+            "title": "Cpu"
+          },
+          "memory": {
+            "type": "number",
+            "title": "Memory"
+          },
+          "server_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Server Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "cpu",
+          "memory",
+          "server_id"
+        ],
+        "title": "VMState"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "WorkloadHistory": {
+        "properties": {
+          "history": {
+            "items": {
+              "$ref": "#/components/schemas/ResourceData"
+            },
+            "type": "array",
+            "maxItems": 64,
+            "minItems": 4,
+            "title": "History"
+          }
+        },
+        "type": "object",
+        "required": [
+          "history"
+        ],
+        "title": "WorkloadHistory"
+      }
+    }
+  }
+}
